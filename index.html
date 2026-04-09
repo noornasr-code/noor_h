@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Hazem ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:black;color:white;overflow:hidden;text-align:center;}
+
+/* 🌌 Background glow */
+body::before{
+content:"";
+position:fixed;
+width:200%;height:200%;
+background:radial-gradient(circle, rgba(255,0,0,0.15), black);
+animation:bg 15s linear infinite;
+}
+@keyframes bg{
+0%{transform:translate(0,0);}
+50%{transform:translate(-10%,-10%);}
+100%{transform:translate(0,0);}
+}
+
+/* 💖 Floating Hearts */
+.heart{
+position:fixed;
+width:15px;height:15px;
+background:red;
+transform:rotate(45deg);
+animation:float 6s linear infinite;
+}
+.heart::before,.heart::after{
+content:"";position:absolute;width:15px;height:15px;background:red;border-radius:50%;
+}
+.heart::before{top:-7px;}
+.heart::after{left:-7px;}
+@keyframes float{
+0%{transform:translateY(100vh) rotate(45deg);opacity:1;}
+100%{transform:translateY(-10vh) rotate(45deg);opacity:0;}
+}
+
+/* sections */
+.section{
+position:absolute;
+width:100%;
+top:50%;
+transform:translateY(-50%);
+opacity:0;
+transition:1.5s;
+}
+.show{opacity:1;}
+
+/* text glow */
+h1,h2{text-shadow:0 0 20px red;}
+
+/* image */
+img{
+width:220px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 0 40px red;
+}
+
+/* typing intro */
+.typing{
+margin-top:20px;
+font-size:20px;
+border-right:2px solid white;
+white-space:nowrap;
+overflow:hidden;
+width:0;
+animation:typing 4s steps(40,end) forwards, blink .7s infinite;
+}
+@keyframes typing{to{width:100%;}}
+@keyframes blink{50%{border-color:transparent;}}
+
+/* ✉️ Envelope */
+.envelope{
+position:relative;
+width:260px;
+height:170px;
+margin:auto;
+cursor:pointer;
+perspective:1200px;
+animation:glowPulse 2s infinite;
+}
+@keyframes glowPulse{
+0%{box-shadow:0 0 10px red;}
+50%{box-shadow:0 0 40px red;}
+100%{box-shadow:0 0 10px red;}
+}
+.envelope::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(145deg,#8b0000,#ff0000);
+border-radius:8px;
+box-shadow:0 0 20px red,0 0 60px rgba(255,0,0,0.7);
+}
+
+/* الغطا */
+.flap{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(145deg,#aa0000,#ff1a1a);
+clip-path:polygon(0 0,100% 0,50% 50%);
+transform-origin:top;
+transition:1s;
+z-index:5;
+}
+
+/* الورقة */
+.paper{
+position:absolute;
+width:420px;
+min-height:100px;
+max-height:80vh;
+background:#fffdf5;
+color:#111;
+top:50%;left:50%;
+transform:translate(-50%,60%) scale(0.2);
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 40px red;
+overflow:hidden;
+opacity:0;
+transition:1.4s ease, height 1s ease;
+z-index:10;
+}
+
+.message{
+font-family:'Courier New',cursive;
+font-size:15px;
+line-height:1.7;
+white-space:pre-line;
+}
+
+/* fadeOut */
+.fadeOut{
+opacity:0;
+transform:scale(0.9);
+filter:blur(3px);
+transition:1.2s;
+}
+
+/* ❤️ Heart Button (Modified) */
+.heart-btn{
+width:200px;
+height:200px;
+background:red;
+border:none;
+position:relative;
+transform:rotate(45deg);
+cursor:pointer;
+box-shadow:0 0 40px red;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+z-index:20;
+}
+
+.heart-btn::before,
+.heart-btn::after{
+content:"";
+position:absolute;
+width:200px;
+height:200px;
+background:red;
+border-radius:50%;
+pointer-events:none;
+}
+
+.heart-btn::before{ top:-100px; left:0; }
+.heart-btn::after{ left:-100px; top:0; }
+
+.heart-text{
+position:absolute;
+transform:rotate(-45deg);
+color:white;
+font-size:16px;
+font-weight:bold;
+text-align:center;
+z-index:30;
+pointer-events:none;
+}
+
+/* cinematic end screen */
+#finalScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+opacity:0;
+transition:2s;
+z-index:999;
+}
+</style>
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+<source src="audio/t1dvrcqlQgI.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="openSound">
+<source src="open.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},200);
+</script>
+
+<!-- 🌟 First Section -->
+<div id="p1" class="section show">
+<h1>Happy Birthday Meshmesh 🎂</h1>
+<img src="img/WhatsApp Image 2026-04-08 at 11.12.30 PM (1).jpeg" alt="Hazem">
+<div class="typing">In this day... ro7y came to life ✨</div>
+</div>
+
+<div id="p2" class="section">
+<div class="envelope" onclick="openLetter()">
+<div class="flap"></div>
+<div class="paper" id="paper">
+<div id="typedText" class="message"></div>
+</div>
+
+
+
+<div id="p4" class="section">
+<h2 id="days"></h2>
+<p>انا من هنا بداءت اعيش فعلا🥺</p>
+</div>
+
+<!-- ❤️ Heart Button Section (Modified) -->
+<div id="p5" class="section">
+<div id="loveBtn" class="heart-btn">
+<span class="heart-text">WILL ALWAYS BE YOUR BIGGEST SUPPORTER AND WILL BE THERE FOR YOU ANYTIME</span>
+</div>
+</div>
+
+
+
+
+<div id="finalScreen">The End 🎬</div>
+
+<script>
+window.addEventListener("DOMContentLoaded", ()=>{
+
+// تعريف الأقسام
+const p1=document.getElementById("p1");
+const p2=document.getElementById("p2");
+const p4=document.getElementById("p4");
+const p5=document.getElementById("p5");
+
+
+const text=`Happy birthday ya Hazomee🥺♥️
+
+مش عارفه ابداء منين بصراحهه بس انا بجد يمكن اسعد انسانه الفتره دي 
+من اول ما عرفتك وحياتي بقت اخف واحلي بطريقة غريب وبقيت بلاقي نفسي بستنى مسدج منك واستنى نكلم بعض حتى لو شوية ثغنانين
+وجودك بقى حاجه حلوة ف يومي وحاجة بقيت محتاجاها من غير ما احس ابسط حاجه بينا بقت بتفرق معايااا انا يمكن مكنتش متوقعة اوصل لاحساس ده بس الحقيقة انك بقيت فارق معايا جدا ومفرحني اكتر ما تتخيل
+وبقيت بحب وجودك في حياتي اكتر مما تتخيل🥺♥️
+كل سنه وانت طيب يمشمش واتمني السنه دي تكون مختلفه وتحقق كل اللي نفسك فيه واشوفك انجح واحد فالدنياا`; // نفس الرسالة
+
+// تشغيل الموسيقى عند أول نقرة + بدء التتابع
+document.body.addEventListener("click", startSequence, { once: true });
+
+function startSequence() {
+    // تشغيل الأغنية
+    document.getElementById("bgMusic").play();
+
+    // خفي الصورة في p1 بعد 1.5 ثانية
+    setTimeout(()=>{
+        p1.classList.remove("show");
+        p2.classList.add("show");
+        setTimeout(()=>{ openLetter(); }, 500); // فتح الظرف بعد 0.5 ثانية
+    }, 1500);
+}
+
+// فتح الظرف
+function openLetter(){
+  document.getElementById("openSound").play();
+  document.querySelector(".flap").style.transform="rotateX(-180deg)";
+  setTimeout(()=>{
+    const paper=document.getElementById("paper");
+    paper.style.transform="translate(-50%, -50%) scale(1)";
+    paper.style.opacity="1";
+    paper.scrollTop=0;
+    typeWriter();
+  },200);
+}
+
+// كتابة الرسالة
+function typeWriter(){
+  let i=0;
+  const el=document.getElementById("typedText");
+  const paper=document.getElementById("paper");
+  el.innerHTML="";
+  paper.style.height="100px";
+
+  function t(){
+    if(i<text.length){
+      el.innerHTML+=text.charAt(i);
+      i++;
+      const scrollH=el.scrollHeight+40;
+      paper.style.height=scrollH+"px";
+      setTimeout(t,25);
+    }
+  }
+  t();
+
+  // بعد انتهاء كتابة الرسالة → باقي الأقسام
+  setTimeout(()=>{
+    paper.classList.add("fadeOut");
+    setTimeout(()=>{
+      p2.classList.remove("show");
+      p4.classList.add("show");
+      startCounter();
+      setTimeout(()=>{
+        p4.classList.remove("show");
+        p5.classList.add("show");
+        setTimeout(()=>{
+          p5.classList.remove("show");
+          p6.classList.add("show");
+          setTimeout(()=>{
+            p6.classList.remove("show");
+            p7.classList.add("show");
+          },5000);
+        },5000);
+      },5000);
+    },1000);
+  },45000);
+}
+
+// العداد
+function startCounter(){
+  let start=new Date("2026-02-03").getTime();
+  setInterval(()=>{
+    let now=new Date().getTime();
+    let diff=now-start;
+    let days=Math.floor(diff/(1000*60*60*24));
+    let hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    let mins=Math.floor((diff%(1000*60*60))/(1000*60));
+    let secs=Math.floor((diff%(1000*60))/1000);
+    document.getElementById("days").innerHTML=
+      days+"d "+hours+"h "+mins+"m "+secs+"s ❤️";
+  },1000);
+}
+
+// ❤️ Heart Button
+const loveBtnElement = document.getElementById("loveBtn");
+loveBtnElement.addEventListener("click",function(){
+  loveBtnElement.style.display = "flex";
+  setTimeout(()=>{
+    loveBtnElement.style.display = "none";
+    document.body.style.background = "black";
+    document.getElementById("finalScreen").style.opacity = "1";
+  },5000);
+});
+
+});
+</script>
+
+</body>
+</html>
